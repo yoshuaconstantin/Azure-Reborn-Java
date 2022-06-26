@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
         dialogBuilder.setView(tutorialDialog);
         dialog = dialogBuilder.create();
         dialog.show();
-
+        
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
