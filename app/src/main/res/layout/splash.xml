@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:id="@+id/sd888"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:text="Snapdragon 888"/>
+
+        <Button
+            android:layout_below="@id/sd888"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:id="@+id/mtk1200"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:text="Dimensity 1200"/>
+
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
