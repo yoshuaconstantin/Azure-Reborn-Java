@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <RelativeLayout
         android:id="@+id/relativeLayout5"
@@ -12,8 +16,10 @@
         android:background="@color/NeoBG"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
         <!--RELATIVE 1-->
         <RelativeLayout
             android:id="@+id/rel1"
@@ -69,17 +75,6 @@
                         android:textSize="@dimen/_8sdp"
                         android:textStyle="normal" />
 
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/lottne1"
-                        android:layout_width="@dimen/_70sdp"
-                        android:layout_height="@dimen/_70sdp"
-                        android:layout_centerVertical="true"
-                        android:layout_toStartOf="@id/defaultprofileneoui"
-                        android:elevation="4dp"
-                        app:lottie_autoPlay="true"
-                        app:lottie_loop="true"
-                        app:lottie_rawRes="@raw/questionmark"
-                        app:lottie_speed="1" />
 
                     <soup.neumorphism.NeumorphCardView
                         android:id="@+id/defaultprofileneoui"
@@ -429,9 +424,11 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rel3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/rel2" >
+            android:layout_below="@id/rel2"
+            android:layout_marginBottom="@dimen/_40sdp">
 
             <soup.neumorphism.NeumorphCardView
 
@@ -450,9 +447,11 @@
                 app:neumorph_shapeType="flat"
                 app:neumorph_strokeColor="@color/Teal"
                 app:neumorph_strokeWidth="2dp">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+
                     <TextView
                         android:id="@+id/deviceName"
                         android:layout_width="wrap_content"
@@ -461,7 +460,7 @@
                         android:layout_marginTop="@dimen/_22sdp"
                         android:text="Device Name"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textSize="@dimen/_9ssp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -473,7 +472,7 @@
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="Processor Type"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textSize="@dimen/_9ssp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -482,84 +481,84 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/ProcType"
                         android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_17sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
                         android:text="Silver Core Max Freq"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textSize="@dimen/_9ssp"
                         android:textStyle="bold" />
 
-                <TextView
-                    android:layout_below="@id/silvercoreFreq"
-                    android:id="@+id/goldcoreFreq"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gold Core Max Freq"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/_10ssp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginLeft="@dimen/_10sdp"/>
+                    <TextView
+                        android:id="@+id/goldcoreFreq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/silvercoreFreq"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Gold Core Max Freq"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_below="@id/goldcoreFreq"
                         android:id="@+id/primecoreFreq"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/goldcoreFreq"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
                         android:text="Prime Core Max Freq"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/_10ssp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginLeft="@dimen/_10sdp"/>
+                        android:textSize="@dimen/_9ssp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_below="@id/primecoreFreq"
                         android:id="@+id/gpumaxFreq"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/primecoreFreq"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
                         android:text="GPU Max Freq"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/_10ssp"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_10sdp"/>
+                        android:textSize="@dimen/_9ssp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_below="@id/gpumaxFreq"
                         android:id="@+id/memFree"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/gpumaxFreq"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:text="Memory Free"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/_10ssp"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_10sdp"/>
+                        android:textSize="@dimen/_9ssp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_below="@id/memFree"
                         android:id="@+id/memoryUsed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/memFree"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
                         android:text="Memory Used"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/_10ssp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginLeft="@dimen/_10sdp"/>
+                        android:textSize="@dimen/_9ssp"
+                        android:textStyle="bold" />
 
 
                     <TextView
-                        android:layout_below="@id/memoryUsed"
                         android:id="@+id/BatteryTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/memoryUsed"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:text="Battery Temp"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/_10ssp"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_10sdp"/>
+                        android:textSize="@dimen/_9ssp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/CPUtemp"
@@ -570,41 +569,80 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:text="CPU temp"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textSize="@dimen/_9ssp"
                         android:textStyle="bold" />
 
 
                 </RelativeLayout>
             </soup.neumorphism.NeumorphCardView>
+
             <RelativeLayout
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_24sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/roundcorner_bluewhale">
 
                 <ImageView
-                    android:layout_centerVertical="true"
                     android:id="@+id/systemimg1"
                     android:layout_width="@dimen/_18sdp"
                     android:layout_height="@dimen/_18sdp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/system" />
 
                 <TextView
-                    android:textStyle="bold"
-                    android:layout_centerVertical="true"
                     android:id="@+id/sisinfo1"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_toEndOf="@id/systemimg1"
                     android:text="SYSTEM INFO    "
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/helper"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:background="@drawable/roundcorner_bluewhale">
+
+                <ImageView
+                    android:id="@+id/settingimg1"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:src="@drawable/help" />
+
+                <TextView
+                    android:id="@+id/setting1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_toEndOf="@id/settingimg1"
+                    android:text="HELP  "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
 
+
     </RelativeLayout>
-    <!--RELATIVE 4-->
 </androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/layout_bottomsheet" />
+    <!--RELATIVE 4-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

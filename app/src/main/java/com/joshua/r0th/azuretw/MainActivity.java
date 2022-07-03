@@ -2,8 +2,10 @@ package com.joshua.r0th.azuretw;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.solver.widgets.WidgetContainer;
 
+
+import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -11,13 +13,19 @@ import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.joshua.r0th.azuretw.MTK1200U.MTKCPU_TWEAK;
 import com.joshua.r0th.azuretw.databinding.NeouiBinding;
 import com.joshua.r0th.azuretw.root_utils.RootUtils;
@@ -43,9 +51,13 @@ public class MainActivity extends AppCompatActivity {
     advanched_tweak advanched_tweak = new advanched_tweak();
     Checking checkingMod = new Checking();
     Runnable r;
-    String checkModel;
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
+    private BottomSheetBehavior bottomSheetBehavior;
+    private LinearLayout linearLayoutBSheet;
+
+    int stateBehave = 1;
+    String proctype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +66,17 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        sheetBehave();
         final RootUtils.SU su = new RootUtils.SU(false, null);
-        checkModel = RootUtils.getProp("ProcType");
-        modeClick(binding.carview1,checkModel,"Chill",R.drawable.defaulton,R.drawable.defaultoff,R.drawable.defaultoff,1);
-        modeClick(binding.carview2,checkModel,"Smart",R.drawable.defaultoff,R.drawable.defaulton,R.drawable.defaultoff,2);
-        modeClick(binding.carview4,checkModel,"Fast AF",R.drawable.defaultoff,R.drawable.defaultoff,R.drawable.defaulton,4);
+        sharedpreferences = getSharedPreferences("myref",Context.MODE_PRIVATE);
+        proctype = sharedpreferences.getString("ProcType", null);
+        modeClick(binding.carview1,proctype,"Chill",R.drawable.defaulton,R.drawable.defaultoff,R.drawable.defaultoff,1);
+        modeClick(binding.carview2,proctype,"Smart",R.drawable.defaultoff,R.drawable.defaulton,R.drawable.defaultoff,2);
+        modeClick(binding.carview4,proctype,"Fast AF",R.drawable.defaultoff,R.drawable.defaultoff,R.drawable.defaulton,4);
         binding.textmode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (checkModel){
+                switch (proctype){
                     case "SM350":
                         sdCPU_TWEAK.defaultSD();
                         statusEnabled("Tap to enable","Tap to enable","Tap to enable");
@@ -78,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        binding.lottne1.setOnClickListener(new View.OnClickListener() {
+        binding.helper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 flipperDialog();
@@ -89,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         final RootUtils.SU su = new RootUtils.SU(false, null);
         String tutorialDialog = RootUtils.getProp("AzureWelcome");
         String RootChecking = RootUtils.getProp("passed");
@@ -196,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                systeminfo(checkModel);
+                systeminfo(proctype);
                 handler.postDelayed(this, 3000);
             }
         };
@@ -265,5 +280,49 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void sheetBehave() {
+
+        this.linearLayoutBSheet = findViewById(R.id.bottomSheet);
+        this.bottomSheetBehavior = BottomSheetBehavior.from(linearLayoutBSheet);
+        bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(View view, int newState) {
+            view.findViewById(R.id.bottomSheet).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (stateBehave == 1){
+                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                        stateBehave++;
+                    }else if (stateBehave == 2){
+                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                        stateBehave--;
+                    }
+                }
+            });
+                if(newState == BottomSheetBehavior.STATE_EXPANDED){
+                    stateBehave=2;
+                    view.findViewById(R.id.reldoze).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainActivity.this, dozemanager.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                }else if(newState == BottomSheetBehavior.STATE_COLLAPSED){
+                stateBehave=1;
+                }
+            }
+
+            @Override
+            public void onSlide(View view, float v) {
+
+            }
+        });
+
+    }
+
+
 
 }
+

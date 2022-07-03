@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:behavior_peekHeight="?actionBarSize"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <!--expand to top android:layout_height="match_parent"-->
+
+    <RelativeLayout
+        android:id="@+id/relstartsheet"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <ImageView
+            android:id="@+id/bottomsheetstart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bottomsheet"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/_18sdp"
+    android:paddingEnd="@dimen/_18sdp">
+
+    <RelativeLayout
+        android:id="@+id/reldoze"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@drawable/roundcorener_blueazure">
+
+        <ImageView
+            android:id="@+id/imgdoze"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/dozemanager" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_toEndOf="@id/imgdoze"
+            android:text="Doze Manager"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/imgdoze"
+            android:background="@color/white" />
+    </RelativeLayout>
+</RelativeLayout>
+
+
+</LinearLayout>
