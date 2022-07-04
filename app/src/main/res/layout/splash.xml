@@ -1,36 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_300sdp"
-        android:layout_centerInParent="true">
+        android:layout_height="match_parent"
+        android:background="@drawable/bluegrapegrad">
 
-        <Button
-            android:id="@+id/sd888"
-            android:layout_centerHorizontal="true"
-            android:layout_width="@dimen/_200sdp"
-            android:layout_height="@dimen/_100sdp"
-            android:text="Snapdragon 888"/>
 
-        <Button
-            android:layout_below="@id/sd888"
+        <ImageView
+            android:id="@+id/imgstart"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_120sdp"
+            android:src="@drawable/azurenewlogo_round" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Azure\nMade\nSimpler"
+            android:textSize="@dimen/_45ssp"
+            android:id="@+id/textazure"
+            android:layout_below="@id/imgstart"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:fontFamily="@font/poesten"
+            android:textColor="#242626"/>
+
+        <TextView
+            android:id="@+id/text2azure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textazure"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="@font/raleway_light"
+            android:text="Take advantage of all the features and\nmodes to satisfy your needs with Azure"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+
+        <TextView
+            android:id="@+id/selectproc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text2azure"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Select your processor type"
+            android:textColor="@color/NeoBG"
+            android:textSize="@dimen/_20sdp" />
+
+        <RelativeLayout
             android:layout_marginTop="@dimen/_20sdp"
-            android:id="@+id/mtk1200"
-            android:layout_centerHorizontal="true"
-            android:layout_width="@dimen/_200sdp"
-            android:layout_height="@dimen/_100sdp"
-            android:text="Dimensity 1200"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/selectproc">
+
+            <soup.neumorphism.NeumorphCardView
+
+                android:id="@+id/sd888button"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:neumorph_backgroundColor="@color/blueAzure"
+                app:neumorph_shadowColorDark="#64ffff"
+                app:neumorph_shadowColorLight="#4ac3c1"
+                app:neumorph_shadowElevation="3dp"
+                app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeColor="@color/blueAzure"
+                app:neumorph_strokeWidth="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/sd888img"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/sd888"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/sd888text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_55sdp"
+                        android:fontFamily="@font/raleway_light"
+                        android:text="SD 888"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/sdtaptoselect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sd888text"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/raleway_light"
+                        android:text="Tap to Select"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold" />
 
 
+                </RelativeLayout>
 
 
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+
+                android:id="@+id/MTKbutton"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:padding="12dp"
+                app:neumorph_backgroundColor="#d891fa"
+                app:neumorph_shadowColorDark="#f8a7ff"
+                app:neumorph_shadowColorLight="#b87bd5"
+                app:neumorph_shadowElevation="3dp"
+                app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeColor="#d891fa"
+                app:neumorph_strokeWidth="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/dm1200img"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/dm1200"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/dm1200text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_55sdp"
+                        android:fontFamily="@font/raleway_light"
+                        android:text="DM 1200"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dm1200taptoselect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dm1200text"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/raleway_light"
+                        android:text="Tap to Select"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </soup.neumorphism.NeumorphCardView>
+        </RelativeLayout>
 
 
     </RelativeLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

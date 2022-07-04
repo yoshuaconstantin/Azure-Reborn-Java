@@ -34,10 +34,8 @@ public class splashCheck extends AppCompatActivity {
                 Intent intent = new Intent(splashCheck.this, MainActivity.class);
                 startActivity(intent);
                 break;
-
         }
-
-        binding.sd888.setOnClickListener(new View.OnClickListener() {
+        binding.sd888button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -51,7 +49,7 @@ public class splashCheck extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        binding.mtk1200.setOnClickListener(new View.OnClickListener() {
+        binding.MTKbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(splashCheck.this, "COMING SOON !", Toast.LENGTH_SHORT).show();

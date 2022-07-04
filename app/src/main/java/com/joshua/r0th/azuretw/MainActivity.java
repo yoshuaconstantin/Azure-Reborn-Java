@@ -27,7 +27,9 @@ import android.widget.ViewFlipper;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.joshua.r0th.azuretw.MTK1200U.MTKCPU_TWEAK;
+import com.joshua.r0th.azuretw.constants.ConstantsString;
 import com.joshua.r0th.azuretw.databinding.NeouiBinding;
+import com.joshua.r0th.azuretw.informationStuff.SystemInfo;
 import com.joshua.r0th.azuretw.root_utils.RootUtils;
 import com.joshua.r0th.azuretw.root_utils.Checking;
 import com.joshua.r0th.azuretw.sd888_param.SDCPU_TWEAK;
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     memory_tweak memory_tweak = new memory_tweak();
     advanched_tweak advanched_tweak = new advanched_tweak();
     Checking checkingMod = new Checking();
+    SystemInfo sys = new SystemInfo();
     Runnable r;
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
@@ -103,18 +106,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        final RootUtils.SU su = new RootUtils.SU(false, null);
+        sharedpreferences = getSharedPreferences("myref",Context.MODE_PRIVATE);
         String tutorialDialog = RootUtils.getProp("AzureWelcome");
-        String RootChecking = RootUtils.getProp("passed");
-        if (RootChecking.isEmpty()){
+        String RootChecking = sharedpreferences.getString("passed", null);
+        if (RootChecking.isEmpty() || RootChecking == null){
             checkingMod.dialogAlert(MainActivity.this,
                     "No Root Detected, Please Grant SU / Root Your phone");
             binding.textmode.setText("ERROR NO ROOT");
             binding.textmode.setTextSize(15);
             binding.relnew1.setVisibility(View.GONE);
             binding.relnew2.setVisibility(View.GONE);
-        }else{
+        }else {
             binding.relnew1.setVisibility(View.VISIBLE);
             binding.relnew2.setVisibility(View.VISIBLE);
             final String checking = RootUtils.getProp("azureSDmode");
@@ -182,7 +184,6 @@ public class MainActivity extends AppCompatActivity {
                             default:
                                 break;
                         }
-
                         break;
                     case "MTK1200":
                         //mtkcpu_tweak.defaultMTK();
@@ -190,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         break;
                 }
+
                 binding.textmode.setText(ModeText);
                 statusMode(chill,smart,fast);
 
@@ -212,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 // TODO Auto-generated method stub
                 systeminfo(proctype);
-                handler.postDelayed(this, 3000);
+                handler.postDelayed(this, 3500);
             }
         };
         handler.postDelayed(r, 0);
@@ -221,31 +223,11 @@ public class MainActivity extends AppCompatActivity {
     private void systeminfo(String proctype){
 //        RandomAccessFile reader = new RandomAccessFile("/sys/devices/system/cpu/cpu0/cpufreq/cpu_temp", "r");
 //        String line = reader.readLine();
-        IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        Intent batteryStatus = this.registerReceiver(null, ifilter);
-        final RootUtils.SU su = new RootUtils.SU(false, null);
-        switch (proctype){
-            case "SM350":
-                binding.deviceName.setText("Xiaomi 11T Pro / Villi");
-                binding.ProcType.setText("Snapdragon 888 / SM350. 8 Core, 3 Cluster");
-                binding.silvercoreFreq.setText("Silver Core Max Freq : "+su.runCommand("cat /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq | awk '{print $1/1000}'")+" Mhz");
-                binding.goldcoreFreq.setText("Gold Core Max Freq : "+su.runCommand("cat /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq | awk '{print $1/1000}'")+" Mhz");
-                binding.primecoreFreq.setText("Prime Core Max Freq : "+su.runCommand("cat /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq | awk '{print $1/1000}'")+" Mhz");
-                binding.gpumaxFreq.setText("GPU Max Freq : "+su.runCommand("cat  /sys/class/kgsl/kgsl-3d0/max_gpuclk | awk '{print $1/1000000}'")+" Mhz");
-                String TotalRam = su.runCommand("cat /proc/meminfo | grep MemTotal | awk '{print $2}'");
-                String FreeRam = su.runCommand("cat /proc/meminfo | grep MemAvailable | awk '{print $2}'");
-                binding.memFree.setText("Memory Free : "+FreeRam+" KB");
-                int usedRam = Integer.parseInt(TotalRam) - Integer.parseInt(FreeRam);
-                binding.memoryUsed.setText("Memory Used : "+String.valueOf(usedRam)+" KB");
-                int temp = batteryStatus.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, -1) / 10;
-                binding.BatteryTemp.setText("Battery Temp : "+String.valueOf(temp)+" Celcius");
-                binding.CPUtemp.setText("Thermal Zone 0 : "+su.runCommand("cat /sys/class/thermal/thermal_zone1/temp | awk '{print $1/1000}'")+" Celcius");
-                break;
-            case "MTK1200":
-                break;
-            default:
-                break;
-        }
+        proctype = sharedpreferences.getString("ProcType", null);
+                sys.CPU_info(proctype,binding.ProcType,binding.deviceName,binding.silvercoreFreq,binding.goldcoreFreq,
+                        binding.primecoreFreq,binding.gpumaxFreq,binding.memFree,binding.memoryUsed,
+                        binding.BatteryTemp,binding.CPUtemp, this);
+
     }
 
     private void statusEnabled(String text1, String text2, String text3){
@@ -308,7 +290,14 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     });
-
+                    view.findViewById(R.id.relMod1).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Toast.makeText(MainActivity.this, "Coming Soon !", Toast.LENGTH_SHORT).show();
+//                            Intent intent = new Intent(MainActivity.this, manual_module.class);
+//                            startActivity(intent);
+                        }
+                    });
                 }else if(newState == BottomSheetBehavior.STATE_COLLAPSED){
                 stateBehave=1;
                 }

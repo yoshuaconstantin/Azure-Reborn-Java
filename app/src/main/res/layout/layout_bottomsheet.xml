@@ -64,6 +64,41 @@
             android:layout_toEndOf="@id/imgdoze"
             android:background="@color/white" />
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="@dimen/_5sdp"
+        android:id="@+id/relMod1"
+        android:layout_below="@id/reldoze"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@drawable/roundcorener_blueazure">
+
+        <ImageView
+            android:id="@+id/imgmod1"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/module" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_toEndOf="@id/imgmod1"
+            android:text="Modul by Tanzil W."
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/imgmod1"
+            android:background="@color/white" />
+    </RelativeLayout>
+
 </RelativeLayout>
 
 
