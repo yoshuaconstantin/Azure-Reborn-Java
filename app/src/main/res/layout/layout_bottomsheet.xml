@@ -64,12 +64,14 @@
             android:layout_toEndOf="@id/imgdoze"
             android:background="@color/white" />
     </RelativeLayout>
+
     <RelativeLayout
-        android:layout_marginTop="@dimen/_5sdp"
+        android:visibility="gone"
         android:id="@+id/relMod1"
-        android:layout_below="@id/reldoze"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
+        android:layout_below="@id/reldoze"
+        android:layout_marginTop="@dimen/_5sdp"
         android:background="@drawable/roundcorener_blueazure">
 
         <ImageView
@@ -92,9 +94,9 @@
             android:textStyle="bold" />
 
         <View
-            android:layout_marginLeft="@dimen/_12sdp"
             android:layout_width="3dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_12sdp"
             android:layout_toEndOf="@id/imgmod1"
             android:background="@color/white" />
     </RelativeLayout>
