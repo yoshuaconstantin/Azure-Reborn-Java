@@ -21,7 +21,11 @@ public class SystemInfo {
         if (ProcType.equals("SM350")){
             producname.setText("Xiaomi 11T Pro / Villi");
             procText.setText(ConstantsString.txtSD888);
-        }else{
+        }else if(ProcType.equals("SD870")){
+            producname.setText("Smarphone X");
+            procText.setText(ConstantsString.txtSD870);
+        }
+        else{
             producname.setText("Xiaomi 11T  / Agate");
             procText.setText(ConstantsString.txtDM1200);
         }

@@ -4,47 +4,32 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.animation.ObjectAnimator;
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.animation.Interpolator;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.RemoteViews;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.joshua.r0th.azuretw.MTK1200U.MTKCPU_TWEAK;
-import com.joshua.r0th.azuretw.constants.ConstantsString;
+import com.joshua.r0th.azuretw.Snapdragon_param.SD870CPU_TWEAK;
 import com.joshua.r0th.azuretw.databinding.NeouiBinding;
 import com.joshua.r0th.azuretw.informationStuff.SystemInfo;
 import com.joshua.r0th.azuretw.root_utils.RootUtils;
 import com.joshua.r0th.azuretw.root_utils.Checking;
-import com.joshua.r0th.azuretw.sd888_param.SDCPU_TWEAK;
+import com.joshua.r0th.azuretw.Snapdragon_param.SD888CPU_TWEAK;
 import com.joshua.r0th.azuretw.tweak.advanched_tweak;
 import com.joshua.r0th.azuretw.tweak.memory_tweak;
 import com.joshua.r0th.azuretw.widget.Azure_widget_provider;
-
-import org.w3c.dom.Text;
-
-import java.io.RandomAccessFile;
-import java.lang.reflect.Method;
 
 import soup.neumorphism.NeumorphCardView;
 
@@ -52,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
     Handler handler;
     NeouiBinding binding;
     SharedPreferences sharedpreferences;
-    SDCPU_TWEAK sdCPU_TWEAK = new SDCPU_TWEAK();
+    SD888CPU_TWEAK sd888CPU_tweak = new SD888CPU_TWEAK();
+    SD870CPU_TWEAK sd870CPU_tweak = new SD870CPU_TWEAK();
     MTKCPU_TWEAK mtkcpu_tweak = new MTKCPU_TWEAK();
     memory_tweak memory_tweak = new memory_tweak();
     advanched_tweak advanched_tweak = new advanched_tweak();
@@ -87,7 +73,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 switch (proctype) {
                     case "SM350":
-                        sdCPU_TWEAK.defaultSD();
+                        sd888CPU_tweak.defaultSD();
+                        statusEnabled("Tap to enable", "Tap to enable", "Tap to enable");
+                        break;
+                    case "SD870":
+                        sd870CPU_tweak.defaultSD();
                         statusEnabled("Tap to enable", "Tap to enable", "Tap to enable");
                         break;
                     case "MTK1200":
@@ -174,25 +164,48 @@ public class MainActivity extends AppCompatActivity {
                     case "SM350":
                         switch (number) {
                             case 1:
-                                sdCPU_TWEAK.chill();
+                                sd888CPU_tweak.chill();
                                 statusEnabled("Enabled", "Tap to Enable", "Tap to enable");
                                 break;
                             case 2:
-                                sdCPU_TWEAK.smarcasual();
+                                sd888CPU_tweak.smarcasual();
                                 statusEnabled("Tap to enable", "Enabled", "Tap to enable");
                                 break;
                             case 4:
-                                sdCPU_TWEAK.fastaf();
+                                sd888CPU_tweak.fastaf();
                                 statusEnabled("Tap to enable", "Tap to enable", "Enabled");
                                 break;
                             case 5:
-                                sdCPU_TWEAK.defaultSD();
+                                sd888CPU_tweak.defaultSD();
                                 statusEnabled("Tap to enable", "Tap to enable", "Tap to enable");
                                 break;
                             default:
                                 break;
                         }
                         break;
+                    case "SD870":
+                        switch (number) {
+                            case 1:
+                                sd870CPU_tweak.chill();
+                                statusEnabled("Enabled", "Tap to Enable", "Tap to enable");
+                                break;
+                            case 2:
+                                sd870CPU_tweak.smarcasual();
+                                statusEnabled("Tap to enable", "Enabled", "Tap to enable");
+                                break;
+                            case 4:
+                                sd870CPU_tweak.fastaf();
+                                statusEnabled("Tap to enable", "Tap to enable", "Enabled");
+                                break;
+                            case 5:
+                                sd870CPU_tweak.defaultSD();
+                                statusEnabled("Tap to enable", "Tap to enable", "Tap to enable");
+                                break;
+                            default:
+                                break;
+                        }
+                            break;
+
                     case "MTK1200":
                         //mtkcpu_tweak.defaultMTK();
                         break;

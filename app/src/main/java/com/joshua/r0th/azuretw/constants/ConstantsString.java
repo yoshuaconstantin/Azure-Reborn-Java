@@ -13,6 +13,7 @@ public class ConstantsString {
 
     //ConstString
     public static String txtSD888 ="Snapdragon 888 / SM350. 8 Core, 3 Cluster";
+    public static String txtSD870 ="Snapdragon 870. 8 Core, 3 Cluster";
     public static String txtDM1200 = "Mediatek Dimensity 1200. 8 Core, 3 Cluster\"";
     public static String txtSilverCore ="Silver Core Max Freq : ";
     public static String txtGoldCore="Gold Core Max Freq : ";

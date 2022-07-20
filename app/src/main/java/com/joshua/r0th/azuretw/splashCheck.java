@@ -49,6 +49,21 @@ public class splashCheck extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.SD870Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString("ProcType", "SD870");
+                editor.putString("passed", "1");
+                editor.apply();
+
+
+                Intent intent = new Intent(splashCheck.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         binding.MTKbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
