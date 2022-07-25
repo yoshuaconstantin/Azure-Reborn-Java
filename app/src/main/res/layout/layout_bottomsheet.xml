@@ -64,13 +64,55 @@
             android:layout_toEndOf="@id/imgdoze"
             android:background="@color/white" />
     </RelativeLayout>
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/_5sdp"
+        android:id="@+id/relthermalMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingEnd="@dimen/_18sdp">
+
+        <RelativeLayout
+            android:id="@+id/reltherm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/roundcorener_blueazure">
+
+            <ImageView
+                android:id="@+id/imgtherm"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:src="@drawable/ic_thermal_set" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_toEndOf="@id/imgtherm"
+                android:text="Thermal Manager"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/imgtherm"
+                android:background="@color/white" />
+        </RelativeLayout>
 
     <RelativeLayout
         android:visibility="gone"
         android:id="@+id/relMod1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
-        android:layout_below="@id/reldoze"
+        android:layout_below="@id/reltherm"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@drawable/roundcorener_blueazure">
 

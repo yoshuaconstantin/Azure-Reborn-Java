@@ -324,6 +324,15 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     });
+
+                    view.findViewById(R.id.reltherm).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainActivity.this, thermalmanager.class);
+                            startActivity(intent);
+                        }
+                    });
+
                     view.findViewById(R.id.relMod1).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {

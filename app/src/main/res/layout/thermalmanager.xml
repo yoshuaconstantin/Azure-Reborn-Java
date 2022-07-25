@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relparentEnd"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:background="@color/blueAzure">
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_15sdp"
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:background="@drawable/azurecolorcorner">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:rotation="0"
+                android:text="M\nE\nN\nU"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp"
+            android:layout_below="@id/button1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:background="@color/blueAzure">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="T\nM\nZ"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toStartOf="@id/relparentEnd"
+        android:background="@color/NeoBG">
+
+        <RelativeLayout
+            android:id="@+id/relTop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_220sdp">
+
+
+            <ImageView
+                android:id="@+id/thermalimg"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/ic_thermal_set" />
+
+            <TextView
+                android:id="@+id/textHello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thermalimg"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Hello,"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp" />
+
+            <TextView
+                android:id="@+id/textThermalManager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textHello"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:fontFamily="@font/poesten"
+                android:text="I'm Thermal Manager"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20ssp" />
+
+            <TextView
+                android:id="@+id/txtMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textThermalManager"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:fontFamily="@font/raleway_light"
+                android:text="You are using :"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp" />
+
+            <TextView
+                android:id="@+id/displayMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtMode"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:fontFamily="@font/aristoncomic"
+                android:text="DYNAMIC"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_22ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/displayMode"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:fontFamily="@font/nunito_sans_italic"
+                android:text="Make Your Android Experience Better With Thermal Manager."
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17ssp" />
+
+        </RelativeLayout>
+
+<!--        Layout-1-->
+        <RelativeLayout
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/relTop">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/greentitnt_roundcorner">
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+<!--            end of layout-1-->
+
+            <!--        Layout-2-->
+            <RelativeLayout
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/relTop">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/bluecorener">
+
+
+                </RelativeLayout>
+        </RelativeLayout>
+        <!--            end of layout-2-->
+
+    </RelativeLayout>
+
+</RelativeLayout>
