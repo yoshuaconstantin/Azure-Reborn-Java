@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:gravity="center"
-                android:text="T\nM\nZ"
+                android:text="A\nD\nV\nA\nN\nC\nE"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold" />
@@ -73,7 +73,7 @@
                 android:layout_height="@dimen/_50sdp"
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:src="@drawable/ic_thermal_set" />
+                android:src="@drawable/vision" />
 
             <TextView
                 android:id="@+id/textHello"
@@ -116,7 +116,7 @@
                 android:layout_below="@id/txtMode"
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:fontFamily="@font/aristoncomic"
-                android:text="DYNAMIC"
+                android:text="DEFAULT"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_22ssp" />
 
@@ -133,44 +133,538 @@
 
         </RelativeLayout>
 
-<!--        Layout-1-->
+        <!--        Layout-1-->
         <RelativeLayout
-            android:layout_marginRight="@dimen/_5sdp"
-            android:layout_marginLeft="@dimen/_3sdp"
-            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/relTop">
+            android:layout_below="@id/relTop"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:visibility="visible">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/greentitnt_roundcorner">
+                            <ScrollView
+                                android:scrollbars="none"
+                                style="@android:style/Widget.Material.ScrollView"
+                                android:scrollbarStyle="outsideInset"
+                                android:overScrollMode="never"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/scrollView1">
 
+                <LinearLayout
+                    android:id="@+id/LinearMENU"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <!--           Linear 1 -->
+                    <LinearLayout
+                        android:id="@+id/Linear1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_65sdp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/BTN1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/default1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="DEFAULT"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/default1"
+                                    android:layout_alignParentBottom="true"
+                                    android:gravity="center"
+                                    android:text="Default Thermal with restriction"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/BTN2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/restore2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="RESTORE"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/restore2"
+                                    android:gravity="center"
+                                    android:text="NO DATA"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!--                End Linear 1-->
+                    <!--           Linear 2 -->
+                    <LinearLayout
+                        android:id="@+id/Linear2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/BTN3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/extreme3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="EXTREME"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/extreme3"
+                                    android:gravity="center"
+                                    android:text="Unlock thermal untill the limit of allowed temp"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/BTN4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/incall4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="IN CALL"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/incall4"
+                                    android:gravity="center"
+                                    android:text="NO DATA"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!--                End Linear 2-->
+                    <!--           Linear 3 -->
+                    <LinearLayout
+                        android:id="@+id/Linear3"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/BTN5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/game5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="GAME"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/game5"
+                                    android:gravity="center"
+                                    android:text="Higher allowed temp than Default for gaming"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/BTN6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/dynamic6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="Dyanamic"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/dynamic6"
+                                    android:gravity="center"
+                                    android:text="Thermal act dynamic depend on usage"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!--                End Linear 3-->
+                    <!--           Linear 4 -->
+                    <LinearLayout
+                        android:id="@+id/Linear4"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/BTN7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/class7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="CLASS 0"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/class7"
+                                    android:gravity="center"
+                                    android:text="NO DATA"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/BTN8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/camera8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="CAMERA"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/camera8"
+                                    android:gravity="center"
+                                    android:text="Specifict for using cam for longer period"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!--                End Linear 4-->
+                    <!--           Linear 5 -->
+                    <LinearLayout
+                        android:id="@+id/Linear5"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/BTN9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/game2_9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="GAME 2"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/game2_9"
+                                    android:gravity="center"
+                                    android:text="Higher allowed temp than GAME"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/BTN10"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/youtube10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="YOUTUBE"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/youtube10"
+                                    android:gravity="center"
+                                    android:text="Guess for light video usage"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!--                End Linear 5-->
+                    <!--           Linear 6 -->
+                    <LinearLayout
+                        android:id="@+id/Linear6"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/BTN11"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/arvr11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="AR / VR"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/arvr11"
+                                    android:gravity="center"
+                                    android:text="Specifict for using AR and VR "
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/BTN12"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/azure_black_roundcorner">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/game3_12"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="GAME 3"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/game3_12"
+                                    android:gravity="center"
+                                    android:text="Higher allowed temp than GAME 2 "
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!--                End Linear 6-->
+                </LinearLayout>
+              </ScrollView>
 
             </RelativeLayout>
         </RelativeLayout>
-<!--            end of layout-1-->
+        <!--            end of layout-1-->
 
-            <!--        Layout-2-->
+        <!--        Layout-2-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/relTop"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:visibility="gone">
+
             <RelativeLayout
-                android:layout_marginRight="@dimen/_5sdp"
-                android:layout_marginLeft="@dimen/_3sdp"
-                android:visibility="gone"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/relTop">
-
-                <RelativeLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:background="@drawable/bluecorener">
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/bluecorener">
 
 
-                </RelativeLayout>
+            </RelativeLayout>
         </RelativeLayout>
         <!--            end of layout-2-->
 
