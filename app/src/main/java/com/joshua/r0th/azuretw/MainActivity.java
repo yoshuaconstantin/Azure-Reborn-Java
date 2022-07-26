@@ -21,6 +21,7 @@ import android.widget.ViewFlipper;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.joshua.r0th.azuretw.MTK1200U.MTKCPU_TWEAK;
+import com.joshua.r0th.azuretw.Permission_Request.permissionRequest;
 import com.joshua.r0th.azuretw.Snapdragon_param.SD870CPU_TWEAK;
 import com.joshua.r0th.azuretw.databinding.NeouiBinding;
 import com.joshua.r0th.azuretw.informationStuff.SystemInfo;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     SD870CPU_TWEAK sd870CPU_tweak = new SD870CPU_TWEAK();
     MTKCPU_TWEAK mtkcpu_tweak = new MTKCPU_TWEAK();
     memory_tweak memory_tweak = new memory_tweak();
+    permissionRequest permissionRequest = new permissionRequest();
     advanched_tweak advanched_tweak = new advanched_tweak();
     dozemanager _dozemanager = new dozemanager();
     Checking checkingMod = new Checking();
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        permissionRequest.AllCpuPermission();
         updateWidget(MainActivity.this);
         sharedpreferences = getSharedPreferences("myref", Context.MODE_PRIVATE);
         String tutorialDialog = RootUtils.getProp("AzureWelcome");

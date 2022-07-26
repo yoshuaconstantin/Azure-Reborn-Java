@@ -27,22 +27,16 @@ public class SD870CPU_TWEAK {
                     //silver
                     " echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;" +
                             " echo \"1248000\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;"+
                             " echo \"300000\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;"+
                             //gold
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;" +
                             " echo \"1286400\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;"+
                             " echo \"710400\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;"+
                             //prime
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;" +
                             " echo \"1190400\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;"+
                             " echo \"844800\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;"+
                             " setprop azureSDmode 1"});
@@ -59,22 +53,16 @@ public class SD870CPU_TWEAK {
                     //silver
                     " echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;" +
                             " echo \"1420800\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;"+
                             " echo \"300000\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;"+
                             //gold
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;" +
                             " echo \"2054400\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;"+
                             " echo \"710400\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;"+
                             //prime
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;" +
                             " echo \"2265600\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;"+
                             " echo \"844800\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;"+
                             " setprop azureSDmode 2"});
@@ -90,22 +78,16 @@ public class SD870CPU_TWEAK {
                     //silver
                     " echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;" +
                             " echo \"1804800\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;"+
                             " echo \"300000\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;"+
                             //gold
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;" +
                             " echo \"2419200\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;"+
                             " echo \"710400\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;"+
                             //prime
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;" +
                             " echo \"3187200\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;"+
                             " echo \"844800\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;"+
                             " setprop azureSDmode 4"});
@@ -121,22 +103,16 @@ public class SD870CPU_TWEAK {
                     //silver
                     " echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;" +
                             " echo \"\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;"+
                             " echo \"\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;"+
                             //gold
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;" +
                             " echo \"\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;"+
                             " echo \"\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;"+
                             //prime
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;" +
                             " echo \"\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;"+
                             " echo \"\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;"+
                             " setprop azureSDmode 1"});
@@ -152,22 +128,16 @@ public class SD870CPU_TWEAK {
                     //silver
                     " echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;" +
                             " echo \"1804800\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq;"+
                             " echo \"806400\" > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq;"+
                             //gold
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;" +
                             " echo \"2419200\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq;"+
                             " echo \"1075200\" > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq;"+
                             //prime
                             " echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us;" +
                             " echo \"0\" > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us;"+
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;" +
-                            " chmod 755 > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;" +
                             " echo \"3187200\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq;"+
                             " echo \"844800\" > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq;"+
                             " setprop azureSDmode 5"});

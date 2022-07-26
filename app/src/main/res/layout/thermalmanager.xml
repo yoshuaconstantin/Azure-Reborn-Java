@@ -356,7 +356,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/game5"
                                     android:gravity="center"
-                                    android:text="Higher allowed temp than Default for gaming"
+                                    android:text="Higher allowed temp than Default"
                                     android:textColor="@color/white"
                                     android:textSize="@dimen/_10ssp" />
                             </RelativeLayout>
@@ -471,7 +471,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/camera8"
                                     android:gravity="center"
-                                    android:text="Specifict for using cam for longer period"
+                                    android:text="Specific for using cam for longer period"
                                     android:textColor="@color/white"
                                     android:textSize="@dimen/_10ssp" />
                             </RelativeLayout>
@@ -596,7 +596,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/arvr11"
                                     android:gravity="center"
-                                    android:text="Specifict for using AR and VR "
+                                    android:text="specific for using AR and VR "
                                     android:textColor="@color/white"
                                     android:textSize="@dimen/_10ssp" />
                             </RelativeLayout>
