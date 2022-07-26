@@ -29,6 +29,7 @@ import com.joshua.r0th.azuretw.root_utils.Checking;
 import com.joshua.r0th.azuretw.Snapdragon_param.SD888CPU_TWEAK;
 import com.joshua.r0th.azuretw.tweak.advanched_tweak;
 import com.joshua.r0th.azuretw.tweak.memory_tweak;
+import com.joshua.r0th.azuretw.tweak.thermal_tweak;
 import com.joshua.r0th.azuretw.widget.Azure_widget_provider;
 
 import soup.neumorphism.NeumorphCardView;
@@ -42,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
     MTKCPU_TWEAK mtkcpu_tweak = new MTKCPU_TWEAK();
     memory_tweak memory_tweak = new memory_tweak();
     advanched_tweak advanched_tweak = new advanched_tweak();
+    dozemanager _dozemanager = new dozemanager();
     Checking checkingMod = new Checking();
+    thermal_tweak _thermal_tweak = new thermal_tweak();
     SystemInfo sys = new SystemInfo();
     Runnable r;
     private AlertDialog.Builder dialogBuilder;
@@ -356,9 +359,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateWidget(Context context) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
+        final RootUtils.SU su = new RootUtils.SU(false, null);
 
 
         final String checking = RootUtils.getProp("azureSDmode");
+        final String checkTherml = su.runCommand("cat /sys/devices/virtual/thermal/thermal_message/sconfig");
+        final String checkDoze = RootUtils.getProp("dozemode");
+        String resultDoze = _dozemanager.searchDozeMode(checkDoze);
+        String resultTherm = _thermal_tweak.searchMode(checkTherml);
         switch (checking){
             case "1":
                 views.setTextViewText(R.id.widget_profile_text, "CHILL");
@@ -377,6 +385,8 @@ public class MainActivity extends AppCompatActivity {
                 views.setImageViewResource(R.id.widget_img, R.drawable.azurenewlogo_round);
                 break;
         }
+        views.setTextViewText(R.id.widget_thermal_status, resultTherm);
+        views.setTextViewText(R.id.widget_doze_status, resultDoze);
 
 
         // Tell the AppWidgetManager to perform an update on the current app widget

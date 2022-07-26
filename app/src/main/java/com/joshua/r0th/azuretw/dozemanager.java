@@ -113,6 +113,28 @@ public class dozemanager extends AppCompatActivity {
         }
 
     }
+
+    public String searchDozeMode(String number){
+        String result = "DEFAULT";
+        switch (number){
+            case "1":
+                result = "Custom Doze";
+                break;
+            case "2":
+                result = "Light Doze";
+                break;
+            case "3":
+                result = "Deep Doze";
+                break;
+            case "4":
+                result = "Gimmic Doze";
+                break;
+            default:
+                result = "DEFAULT";
+                break;
+        }
+        return result;
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

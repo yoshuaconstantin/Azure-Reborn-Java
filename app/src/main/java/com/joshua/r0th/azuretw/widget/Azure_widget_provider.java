@@ -22,7 +22,8 @@ public class Azure_widget_provider extends AppWidgetProvider {
 
             // Create an Intent to launch ExampleActivity
             Intent intent = new Intent(context, MainActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
@@ -31,7 +32,15 @@ public class Azure_widget_provider extends AppWidgetProvider {
 
 
             // Tell the AppWidgetManager to perform an update on the current app widget
+
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
     }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        super.onReceive(context, intent);
+
+    }
+
 }
